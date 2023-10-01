@@ -43,11 +43,11 @@ function amort(balance, interestRate, terms)
         1+monthlyRate, -terms)));
 	    
 	//begin building the return string for the display of the amort table
-    var result = "Loan amount: $" + balance.toFixed(2) +  "<br />" + 
+    var result = "Loan amount: Rs." + balance.toFixed(2) +  "<br />" + 
         "Interest rate: " + (interestRate*100).toFixed(2) +  "%<br />" +
         "Number of months: " + terms + "<br />" +
-        "Monthly payment: $" + payment.toFixed(2) + "<br />" +
-        "Total paid: $" + (payment * terms).toFixed(2) + "<br /><br />";
+        "Monthly payment: Rs." + payment.toFixed(2) + "<br />" +
+        "Total paid: Rs." + (payment * terms).toFixed(2) + "<br /><br />";
         
     //add header row for table to return string
 	result += "<table border='1'><tr><th>Month #</th><th>Balance</th>" + 
@@ -73,15 +73,15 @@ function amort(balance, interestRate, terms)
 		
 		
 		//code for displaying in loop balance
-		result += "<td> $" + balance.toFixed(2) + "</td>";
+		result += "<td> Rs." + balance.toFixed(2) + "</td>";
 		
 		//calc the in-loop interest amount and display
 		interest = balance * monthlyRate;
-		result += "<td> $" + interest.toFixed(2) + "</td>";
+		result += "<td> Rs." + interest.toFixed(2) + "</td>";
 		
 		//calc the in-loop monthly principal and display
 		monthlyPrincipal = payment - interest;
-		result += "<td> $" + monthlyPrincipal.toFixed(2) + "</td>";
+		result += "<td> Rs." + monthlyPrincipal.toFixed(2) + "</td>";
 		
 		//end the table row on each iteration of the loop	
 		result += "</tr>";
@@ -109,3 +109,4 @@ function validateInputs(value)
 		return true;
 	}
 }
+
