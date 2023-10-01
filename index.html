@@ -1,21 +1,12 @@
-<!-- 
-	 Joel Nutt
-	 ITEC136-V1WW(FA11) - Franklin U.
-	 David Crossmier - Instructor
-	 Assigment 8-3 (HomeWork 7)
--->
-
 <html>
 	<head>
-	 <script src="calculate.js"></script> 
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-		<title>Loan Ammortization - Joel Nutt</title>		
-		<script language="JavaScript" type="text/javascript" 
-			src="amort.js"></script>		
+	 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Loan Ammortization Calculator</title>		
+		<script language="JavaScript" type="text/javascript" src="calculate.js"></script>		
 	</head>
 	<body>
-		<h1>Loan Amortization Table</h1>
-		<h5>Joel Nutt - ITEC136-V1WW(FA11) - Assigment 8-3 (HomeWork 7)</h5>
+		<h1>Loan Ammortization Calculator</h1>
+		<h5>Compare and buy accordingly</h5>
 		<hr>		
 		<form>
 			<fieldset>
@@ -37,7 +28,7 @@
 					<option value="36">36 Months</option>
 					<option value="48">48 Months</option>
 					<option value="60">60 Months</option>
-            <option value="60">72 Months</option>
+					<option value="72">72 Months</option>
 				</select>
 				<br />
 				<input type="button" value="Calculate" onclick="getValues()" />								
@@ -46,8 +37,8 @@
 		<form>
 			<fieldset>
 			<legend>Outputs</legend>
-				<div id="Result"></div>
-			</fieldset>						
+			<div id="Result"></div>
+			</fieldset>
 		</form>		
 	</body>
 </html>
