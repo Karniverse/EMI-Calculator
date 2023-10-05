@@ -20,14 +20,19 @@
 		<form>
 			<fieldset>
 				<div class="container mx-auto">				
-				<div class="row"><legend>Enter the Total price of the product to calculate</legend></div>
+				<!--div class="text-center d-flex flex-column align-items-center" style="height: 100vh;"-->				
 				<div class="row">
-				<div class="col-md-4 col-6">
+					<div class="col-md-12 text-center d-flex flex-column align-items-center">
+						<legend>Enter the Total price of the product to calculate</legend>
+					</div>
+				</div>
+				<div class="row">
+				<div class="col-md-4 col-12 align-items-center">
 				<label for="principal"><b>Price of the product:</b></label><br />
 				<label for="interest"><b>Interest per annum:</b></label><br />
 				<label for="terms"><b>No. of Terms:</b></label><br />
 				</div>
-				<div class="col-md-4 col-6">
+				<div class="col-md-4 col-12">
 				<input type="text" id="principal" /><br />
 				<input type="text" id="interest" /><br />
 				<select id="terms">
@@ -44,34 +49,13 @@
 				</select><br />
 				</div>
 				<div class="row"><input type="button" value="Calculate" onclick="getValues()" /></div>
-				</div></div>
-				<!--label for="principal"><b>Price of the product:</b></label>
-				<input type="text" id="principal" />
-				<br />
-				<label for="interest"><b>Interest per annum:</b></label>
-				<input type="text" id="interest" />
-				<br />
-				<label for="terms"><b>No. of Terms:</b></label>
-				<select id="terms">
-					<option value="3">3 Months</option>
-					<option value="6">6 Months</option>
-					<option value="9">9 Months</option>
-					<option value="12">12 Months</option>
-					<option value="18">18 Months</option>
-					<option value="24">24 Months</option>
-					<option value="36">36 Months</option>
-					<option value="48">48 Months</option>
-					<option value="60">60 Months</option>
-					<option value="72">72 Months</option>
-				</select>
-				<br />
-				<input type="button" value="Calculate" onclick="getValues()" /-->								
+				</div></div>												
 			</fieldset>
 			
 		</form>
 		<form>
 			<fieldset>
-			<legend>Calculated Monthly EMI from different Payment methods</legend>
+			<legend class="text-center d-flex flex-column align-items-center justify-content-center">Calculated Monthly EMI from different Payment methods</legend>
 			<div id="Result"></div>
 			</fieldset>
 		</form>		
