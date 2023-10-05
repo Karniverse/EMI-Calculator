@@ -48,41 +48,42 @@ function amort(balance, interestRate, terms)
 	var paymenticicioncallemi = balance * (0.015/(1-Math.pow(1+0.015, -terms)));
 	var paymentamazonpaylateremi = balance * (0.02/(1-Math.pow(1+0.02, -terms)));
 	var icicinocostemitotalamount = (Number((payment * terms).toFixed(2))+Number(icicinocostemi)).toFixed(2);
-	var icicioncallemitotalamount = (Number((paymenticicioncallemi * terms).toFixed(2))+Number(icicioncallemi)).toFixed(2);
+	var icicioncallemitotalamount = (Number((paymenticicioncallemi * terms).toFixed(0))+Number(icicioncallemi)).toFixed(0);
 	var yesbankemiconvtotalamount = (Number((payment * terms).toFixed(2))+Number(yesbankemiconv)).toFixed(2);
-	var amazonpaylatertotalamount = Number((paymentamazonpaylateremi * terms).toFixed(2));
+	var amazonpaylatertotalamount = Number((paymentamazonpaylateremi * terms).toFixed(0));
 	    
 	//begin building the return string for the display of the amort table
-    var result = "<h3>ICICI Credit Card Insta No cost EMI</h3>"+"Loan amount: Rs." + balance.toFixed(2) +  "<br />" + 
+    var result = "<div class=\"container\"><div class=\"row\"><div class=\"col-xs-6\"><h3>ICICI Credit Card Insta No cost EMI</h3>"+
+		"Loan amount: Rs." + balance.toFixed(2) +  "<br />" + 
         "Interest rate: " + (interestRate*100).toFixed(2) +  "%<br />" +
 		"Processing fee: Rs." + icicinocostemi +  "<br />" +
 	    "Number of months: " + terms + "<br />" +
         "Monthly payment: Rs." + payment.toFixed(2) + "<br />" +
-        "Total paid: Rs." + icicinocostemitotalamount + "<br /><br />" + 
-		"<h3>ICICI Credit Card On call EMI</h3>" + 		
+        "Total paid: Rs." + icicinocostemitotalamount + "<br /><br /></div>" + 
+		"<div class=\"col-xs-6\"><h3>ICICI Credit Card On call EMI</h3>" + 		
 		"Loan amount: Rs." + balance.toFixed(2) +  "<br />" + 
         "Interest rate: " + (0.18*100).toFixed(2) +  "%<br />" +
-		"Processing fee: Rs." + icicioncallemi +  "<br />" +
+		"Processing fee: Rs." + icicioncallemi.toFixed(0) +  "<br />" +
         "Number of months: " + terms + "<br />" +
         "Monthly payment: Rs." + paymenticicioncallemi.toFixed(2) + "<br />" +
-        "Total paid: Rs." + icicioncallemitotalamount + "<br /><br />"+
-		"<h3>Yes Bank Credit Card EMI</h3>"+
+        "Total paid: Rs." + icicioncallemitotalamount + "<br /><br /></div>"+
+		"<div class=\"col-xs-6\"><h3>Other Banks Credit Card EMI with 1% Processing Fee</h3>"+
 		"Loan amount: Rs." + balance.toFixed(2) +  "<br />" + 
         "Interest rate: " + (interestRate*100).toFixed(2) +  "%<br />" +
-		"Processing fee: Rs." + yesbankemiconv +  "<br />" +		
+		"Processing fee: Rs." + yesbankemiconv.toFixed(0) +  "<br />" +		
         "Number of months: " + terms + "<br />" +
         "Monthly payment: Rs." + payment.toFixed(2) + "<br />" +
-        "Total paid: Rs." + yesbankemiconvtotalamount + "<br /><br />"+
-		"<h3>Amazon Pay later EMI</h3>"+
+        "Total paid: Rs." + yesbankemiconvtotalamount + "<br /><br /></div>"+
+		"<div class=\"col-xs-6\"><h3>Amazon Pay later EMI</h3>"+
 		"Loan amount: Rs." + balance.toFixed(2) +  "<br />" + 
         "Interest rate: " + (.24*100).toFixed(2) +  "%<br />" +
 		"Processing fee: Rs." + 0 +  "<br />" +		
         "Number of months: " + terms + "<br />" +
-        "Monthly payment: Rs." + paymentamazonpaylateremi.toFixed(2) + "<br />" +
-        "Total paid: Rs." + amazonpaylatertotalamount + "<br /><br />";
+        "Monthly payment: Rs." + paymentamazonpaylateremi.toFixed(0) + "<br />" +
+        "Total paid: Rs." + amazonpaylatertotalamount.toFixed(0) + "<br /><br /></div></div></div>";
         
     //add header row for table to return string
-	result += "<table border='1'><tr><th>Month #</th><th>Balance</th>" + "<th>Interest</th><th>Principal</th>";
+	//result += "<table border='1'><tr><th>Month #</th><th>Balance</th>" + "<th>Interest</th><th>Principal</th>";
 	//iciciocemi += "<table border='1'><tr><th>Month #</th><th>Balance</th>" + "<th>Interest</th><th>Principal</th>";
     
     /**
@@ -98,7 +99,7 @@ function amort(balance, interestRate, terms)
 		var monthlyPrincipal = 0;
 		
 		//start a new table row on each loop iteration
-		result += "<tr align=center>";
+		/*result += "<tr align=center>";
 		
 		//display the month number in col 1 using the loop count variable
 		result += "<td>" + (count + 1) + "</td>";
@@ -119,7 +120,7 @@ function amort(balance, interestRate, terms)
 		result += "</tr>";
 		
 		//update the balance for each loop iteration
-		balance = balance - monthlyPrincipal;		
+		balance = balance - monthlyPrincipal;*/		
 	}
 	
 	//Final piece added to return string before returning it - closes the table
