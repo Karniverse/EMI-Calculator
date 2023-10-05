@@ -53,28 +53,28 @@ function amort(balance, interestRate, terms)
 	var amazonpaylatertotalamount = Number((paymentamazonpaylateremi * terms).toFixed(0));
 	    
 	//begin building the return string for the display of the amort table
-    var result = "<div class=\"container\"><div class=\"row\"><div class=\"col-xs-6\"><h3>ICICI Credit Card Insta No cost EMI</h3>"+
+    var result = "<div class=\"container-fluid\"><div class=\"row\"><div class=\"col-md-4\"><h3>ICICI Credit Card Insta No cost EMI</h3>"+
 		"Loan amount: Rs." + balance.toFixed(2) +  "<br />" + 
         "Interest rate: " + (interestRate*100).toFixed(2) +  "%<br />" +
 		"Processing fee: Rs." + icicinocostemi +  "<br />" +
 	    "Number of months: " + terms + "<br />" +
         "Monthly payment: Rs." + payment.toFixed(2) + "<br />" +
         "Total paid: Rs." + icicinocostemitotalamount + "<br /><br /></div>" + 
-		"<div class=\"col-xs-6\"><h3>ICICI Credit Card On call EMI</h3>" + 		
+		"<div class=\"col-md-4\"><h3>ICICI Credit Card On call EMI</h3>" + 		
 		"Loan amount: Rs." + balance.toFixed(2) +  "<br />" + 
         "Interest rate: " + (0.18*100).toFixed(2) +  "%<br />" +
 		"Processing fee: Rs." + icicioncallemi.toFixed(0) +  "<br />" +
         "Number of months: " + terms + "<br />" +
         "Monthly payment: Rs." + paymenticicioncallemi.toFixed(2) + "<br />" +
         "Total paid: Rs." + icicioncallemitotalamount + "<br /><br /></div>"+
-		"<div class=\"col-xs-6\"><h3>Other Banks Credit Card EMI with 1% Processing Fee</h3>"+
+		"<div class=\"col-md-4\"><h3>Other Banks Credit Card EMI with 1% Processing Fee</h3>"+
 		"Loan amount: Rs." + balance.toFixed(2) +  "<br />" + 
         "Interest rate: " + (interestRate*100).toFixed(2) +  "%<br />" +
 		"Processing fee: Rs." + yesbankemiconv.toFixed(0) +  "<br />" +		
         "Number of months: " + terms + "<br />" +
         "Monthly payment: Rs." + payment.toFixed(2) + "<br />" +
         "Total paid: Rs." + yesbankemiconvtotalamount + "<br /><br /></div>"+
-		"<div class=\"col-xs-6\"><h3>Amazon Pay later EMI</h3>"+
+		"<div class=\"col-md-4\"><h3>Amazon Pay later EMI</h3>"+
 		"Loan amount: Rs." + balance.toFixed(2) +  "<br />" + 
         "Interest rate: " + (.24*100).toFixed(2) +  "%<br />" +
 		"Processing fee: Rs." + 0 +  "<br />" +		
