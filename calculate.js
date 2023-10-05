@@ -57,9 +57,9 @@ function amort(balance, interestRate, terms)
 	var yesbankemiconvtotalinterest = (yesbankemiconvtotalamount-balance).toFixed(2);
 	var amazonpaylatertotalinterest = (amazonpaylatertotalamount-balance).toFixed(2);
 	
-	    
+	var lowestamongall = Math.min(icicinocostemitotalamount, icicioncallemitotalamount, yesbankemiconvtotalamount, amazonpaylatertotalamount);    
 	//begin building the return string for the display of the amort table
-    var result = "<div class=\"container-fluid\"><div class=\"row\"><div class=\"col-md-4\"><h3>ICICI Credit Card Insta No cost EMI</h3>"+
+    var result = lowestamongall +"<div class=\"container-fluid\"><div class=\"row\"><div class=\"col-md-4\"><h3>ICICI Credit Card Insta No cost EMI</h3>"+
 		"Loan amount: Rs." + balance.toFixed(2) +  "<br />" + 
         "Interest rate: " + (interestRate*100).toFixed(2) +  "%<br />" +
 		"Processing fee: Rs." + icicinocostemi +  "<br />" +
