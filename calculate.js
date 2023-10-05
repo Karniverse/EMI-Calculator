@@ -47,10 +47,16 @@ function amort(balance, interestRate, terms)
     var payment = balance * (monthlyRate/(1-Math.pow(1+monthlyRate, -terms)));
 	var paymenticicioncallemi = balance * (0.015/(1-Math.pow(1+0.015, -terms)));
 	var paymentamazonpaylateremi = balance * (0.02/(1-Math.pow(1+0.02, -terms)));
+	var iciciinstaemimonthlypayment = Number(payment+(icicinocostemi/terms)).toFixed(0)
 	var icicinocostemitotalamount = (Number((payment * terms).toFixed(2))+Number(icicinocostemi)).toFixed(2);
 	var icicioncallemitotalamount = (Number((paymenticicioncallemi * terms).toFixed(0))+Number(icicioncallemi)).toFixed(0);
 	var yesbankemiconvtotalamount = (Number((payment * terms).toFixed(2))+Number(yesbankemiconv)).toFixed(2);
 	var amazonpaylatertotalamount = Number((paymentamazonpaylateremi * terms).toFixed(0));
+	var icicinocostemitotalinterest = (icicinocostemitotalamount-balance).toFixed(2);
+	var icicioncallemitotalinterest = (icicioncallemitotalamount-balance).toFixed(2);
+	var yesbankemiconvtotalinterest = (yesbankemiconvtotalamount-balance).toFixed(2);
+	var amazonpaylatertotalinterest = (amazonpaylatertotalamount-balance).toFixed(2);
+	
 	    
 	//begin building the return string for the display of the amort table
     var result = "<div class=\"container-fluid\"><div class=\"row\"><div class=\"col-md-4\"><h3>ICICI Credit Card Insta No cost EMI</h3>"+
@@ -58,7 +64,8 @@ function amort(balance, interestRate, terms)
         "Interest rate: " + (interestRate*100).toFixed(2) +  "%<br />" +
 		"Processing fee: Rs." + icicinocostemi +  "<br />" +
 	    "Number of months: " + terms + "<br />" +
-        "Monthly payment: Rs." + payment.toFixed(2) + "<br />" +
+        "Monthly payment: Rs." + iciciinstaemimonthlypayment + "<br />" +
+		"Total Interest Paid Incl. GST: Rs." + icicinocostemitotalinterest + "<br />" +
         "Total paid: Rs." + icicinocostemitotalamount + "<br /><br /></div>" + 
 		"<div class=\"col-md-4\"><h3>ICICI Credit Card On call EMI</h3>" + 		
 		"Loan amount: Rs." + balance.toFixed(2) +  "<br />" + 
@@ -66,6 +73,7 @@ function amort(balance, interestRate, terms)
 		"Processing fee: Rs." + icicioncallemi.toFixed(0) +  "<br />" +
         "Number of months: " + terms + "<br />" +
         "Monthly payment: Rs." + paymenticicioncallemi.toFixed(2) + "<br />" +
+		"Total Interest Paid Incl. GST: Rs." + icicioncallemitotalinterest + "<br />" +
         "Total paid: Rs." + icicioncallemitotalamount + "<br /><br /></div>"+
 		"<div class=\"col-md-4\"><h3>Other Banks Credit Card EMI with 1% Processing Fee</h3>"+
 		"Loan amount: Rs." + balance.toFixed(2) +  "<br />" + 
@@ -73,6 +81,7 @@ function amort(balance, interestRate, terms)
 		"Processing fee: Rs." + yesbankemiconv.toFixed(0) +  "<br />" +		
         "Number of months: " + terms + "<br />" +
         "Monthly payment: Rs." + payment.toFixed(2) + "<br />" +
+		"Total Interest Paid Incl. GST: Rs." + yesbankemiconvtotalinterest + "<br />" +
         "Total paid: Rs." + yesbankemiconvtotalamount + "<br /><br /></div>"+
 		"<div class=\"col-md-4\"><h3>Amazon Pay later EMI</h3>"+
 		"Loan amount: Rs." + balance.toFixed(2) +  "<br />" + 
@@ -80,6 +89,7 @@ function amort(balance, interestRate, terms)
 		"Processing fee: Rs." + 0 +  "<br />" +		
         "Number of months: " + terms + "<br />" +
         "Monthly payment: Rs." + paymentamazonpaylateremi.toFixed(0) + "<br />" +
+		"Total Interest Paid Incl. GST: Rs." + amazonpaylatertotalinterest + "<br />" +
         "Total paid: Rs." + amazonpaylatertotalamount.toFixed(0) + "<br /><br /></div></div></div>";
         
     //add header row for table to return string
