@@ -1,5 +1,18 @@
-  .gradient-bg {
-    background: linear-gradient(to bottom right, #ffdab9, #ffcc99, #C70039); /* Replace with your desired gradient colors */
-    /* You can adjust the direction and colors as needed */
-  }
-  
+        body {
+            margin: 0; /* Remove default margin */
+            overflow: hidden; /* Hide any overflowing content */
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Set a negative z-index to place the canvas behind other content */
+        }
+
+        .content {
+            /* Add styles for your content here */
+            position: relative;
+            z-index: 1; /* Set a positive z-index to place content on top of the canvas */
+            padding: 20px;
+        }
