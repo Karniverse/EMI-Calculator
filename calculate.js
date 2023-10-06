@@ -153,4 +153,24 @@ function validateInputs(value)
 		return true;
 	}
 }
+function bodygradient() {
+    // Create a GSAP timeline
+    const timeline = gsap.timeline({ repeat: -1, yoyo: true });
+
+    // Define the animation
+    timeline.to('body', {
+        duration: 5, // Animation duration (seconds)
+        background: 'linear-gradient(to bottom right, #ffdab9, #ffcc99, #C70039)', // Start gradient
+        ease: 'none', // Linear easing for smooth transitions
+        repeat: -1, // Repeat indefinitely
+        yoyo: true, // Reverse the animation
+        onStart: () => {
+            console.log('Animation started');
+        },
+        onComplete: () => {
+            console.log('Animation completed');
+        },
+    });
+}
+    
 
