@@ -295,28 +295,10 @@ gsap.ticker.add(()=>{ //update on each tick
 
   hue-=0.5;
   ctx.globalCompositeOperation='lighter';
-  ctx.fillStyle = 'hsl('+hue+', 75%, 25%)';
+  ctx.fillStyle = 'hsla('+hue+', 75%, 75%, 0.5)';
   ctx.fillRect(0, 0, c.width, c.height);
 
 });
-/*        var body = document.body;
-        var c = document.querySelector('.c');
-        c.remove(); // Remove the canvas element
-        body.appendChild(c); // Append the canvas to the body
-
-        // Set body dimensions to match the canvas
-        body.style.width = c.width + 'px';
-        body.style.height = c.height + 'px';
-
-        // Update canvas size on window resize
-        window.onresize = function () {
-            c.width = window.innerWidth;
-            c.height = window.innerHeight;
-            setGrid();
-        };
-
-        // Start the animation
-        gsap.delayedCall(0.2, anim);*/
 }
     
 
