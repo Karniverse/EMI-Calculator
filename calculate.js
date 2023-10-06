@@ -48,7 +48,7 @@ function amort(balance, interestRate, terms)
 	var paymenticicioncallemi = balance * (0.015/(1-Math.pow(1+0.015, -terms)));
 	var paymentamazonpaylateremi = balance * (0.02/(1-Math.pow(1+0.02, -terms)));
 	var iciciinstaemimonthlypayment = Number(payment+(icicinocostemi/terms)).toFixed(0)
-	var icicinocostemitotalamount = (Number((payment * terms).toFixed(2))+Number(icicinocostemi)).toFixed(2);
+	var icicinocostemitotalamount = ((Number((payment * terms).toFixed(2))+Number(icicinocostemi)).toFixed(2))-((payment * terms).toFixed(2)-balance.toFixed(2));
 	var icicioncallemitotalamount = (Number((paymenticicioncallemi * terms).toFixed(0))+Number(icicioncallemi)).toFixed(0);
 	var yesbankemiconvtotalamount = (Number((payment * terms).toFixed(2))+Number(yesbankemiconv)).toFixed(2);
 	var amazonpaylatertotalamount = Number((paymentamazonpaylateremi * terms).toFixed(0));
