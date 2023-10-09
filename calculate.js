@@ -153,7 +153,7 @@ function validateInputs(value)
 		return true;
 	}
 }
-/*function bodygradient() {
+function bodygradient() {
     // Create a GSAP timeline
     const timeline = gsap.timeline({ repeat: -1, yoyo: true });
 
@@ -171,9 +171,9 @@ function validateInputs(value)
             console.log('Animation completed');
         },
     });
-}*/
+}
 
-function bodygradient() {
+function bodytile() {
 var c = $('.c')[0],
     ctx = c.getContext("2d"),
     cw = 0,
