@@ -9,6 +9,7 @@
             position: fixed;
             top: 0;
             left: 0;
+			display: block;
             z-index: -1; /* Set a negative z-index to place the canvas behind other content */
         }
 
