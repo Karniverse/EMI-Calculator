@@ -236,7 +236,7 @@ const Polyline = (function () {
   return Polyline;
 })();
 
-App();
+//App();
 
 function getValues()
 {
